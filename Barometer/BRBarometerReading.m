@@ -26,16 +26,9 @@ static const double kpaToInHG = 0.296133971008484;
     return self;
 }
 
-- (NSString *)convertKPAToInHGWithNumber:(NSNumber *)numberPressure
+- (NSNumber *)convertKPAToInHGWithNumber:(NSNumber *)numberPressure
 {
-    NSNumberFormatter *formatTwoDecimalPlaces = [[NSNumberFormatter alloc] init];
-    [formatTwoDecimalPlaces setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatTwoDecimalPlaces setMaximumFractionDigits:2];
-    [formatTwoDecimalPlaces setRoundingMode: NSNumberFormatterRoundUp];
-
-    NSNumber *convertedPressure = [NSNumber numberWithDouble:([numberPressure doubleValue] * kpaToInHG)];
-    
-    return [formatTwoDecimalPlaces stringFromNumber:convertedPressure];
+    return [NSNumber numberWithDouble:([numberPressure doubleValue] * kpaToInHG)];
 }
 
 @end

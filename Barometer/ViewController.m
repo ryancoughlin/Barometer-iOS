@@ -44,11 +44,13 @@
             NSString *heightUnitString = [_lengthFormatter unitStringFromValue:[altitudeData.relativeAltitude doubleValue] unit:heightFormatterUnit];
             
             BRBarometerReading *currentReading = [[BRBarometerReading alloc] initWithPressure:[NSNumber numberWithDouble:[altitudeData.pressure doubleValue]] currentDate:[NSDate date]];
-            
             BRBarometerReading *lastReading = [_barometerReadings lastObject];
+
+            NSLog(@"last: %@", lastReading.pressure);
+            NSLog(@"currentReading: %@", currentReading.pressure);
         
             if (!lastReading.pressure == nil) {
-                if (![currentReading.pressure isEqualToString:lastReading.pressure])
+                if (![currentReading.pressure isEqualToNumber:lastReading.pressure])
                 {
                     [_barometerReadings addObject:currentReading];
                 
@@ -58,10 +60,23 @@
             }
             
             self.relativeAltitudeLabel.text  = heightFeet;
-            self.airPressureLabel.text = [NSString stringWithFormat:@"%@", currentReading.pressure];
+            self.airPressureLabel.text = [self formatNumberToTwoDecimalPlacesWithNumber:currentReading.pressure];
+
         }];
     } else {
         NSLog(@"Hardware not supported.");
     }
 }
+
+- (NSString *)formatNumberToTwoDecimalPlacesWithNumber:(NSNumber *)number
+{
+    NSNumberFormatter *formatTwoDecimalPlaces = [[NSNumberFormatter alloc] init];
+    [formatTwoDecimalPlaces setNumberStyle:NSNumberFormatterDecimalStyle];
+    [formatTwoDecimalPlaces setMaximumFractionDigits:2];
+    [formatTwoDecimalPlaces setRoundingMode: NSNumberFormatterRoundUp];
+
+    return [formatTwoDecimalPlaces stringFromNumber:number];
+}
+
+
 @end

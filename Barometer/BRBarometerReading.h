@@ -11,7 +11,7 @@
 @interface BRBarometerReading : NSObject
 
 @property (nonatomic, strong) NSDate *date;
-@property (nonatomic, strong) NSString *pressure;
+@property (nonatomic, strong) NSNumber *pressure;
 
 - (instancetype)initWithPressure:(NSNumber *)airPressureNumber currentDate:(NSDate *)date;
 
