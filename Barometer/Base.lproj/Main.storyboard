@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -66,7 +68,7 @@
                                             <constraint firstAttribute="width" constant="187" id="QJs-fr-lrp"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" red="0.49803921580314636" green="0.49803921580314636" blue="0.49803921580314636" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -87,7 +89,7 @@
                                             <constraint firstAttribute="height" constant="21" id="G9B-GH-5kV"/>
                                             <constraint firstAttribute="width" constant="153" id="uip-Y8-SFo"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
@@ -152,13 +154,36 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUN-Ne-R1M" customClass="BRScaleLines">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="dLG-Hx-IU8"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dLG-Hx-IU8"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="dLG-Hx-IU8"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="UUN-Ne-R1M" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="1qd-WS-bLz"/>
                             <constraint firstItem="L7v-C1-v51" firstAttribute="leading" secondItem="jyV-Pf-zRb" secondAttribute="leading" id="4fn-F9-lQx"/>
+                            <constraint firstItem="UUN-Ne-R1M" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="C5k-rR-aAO"/>
                             <constraint firstItem="Sct-7B-z0I" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="DGQ-wg-qUm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UUN-Ne-R1M" secondAttribute="trailing" constant="347" id="Gfk-An-FHd"/>
+                            <constraint firstItem="UUN-Ne-R1M" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="ISY-fP-wL9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UUN-Ne-R1M" secondAttribute="trailing" constant="347" id="SsM-fc-NBS"/>
                             <constraint firstItem="L7v-C1-v51" firstAttribute="trailing" secondItem="jyV-Pf-zRb" secondAttribute="trailing" id="Xba-oJ-omG"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Sct-7B-z0I" secondAttribute="bottom" constant="22.5" id="dMF-7V-kAc"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="UUN-Ne-R1M" secondAttribute="bottom" id="dPZ-8m-mWQ"/>
                             <constraint firstItem="L7v-C1-v51" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="200" id="jR1-Rj-wki"/>
                             <constraint firstAttribute="centerX" secondItem="L7v-C1-v51" secondAttribute="centerX" id="m9u-HL-AmR"/>
                             <constraint firstItem="Sct-7B-z0I" firstAttribute="centerX" secondItem="L7v-C1-v51" secondAttribute="centerX" id="uz4-fe-tWO"/>
@@ -166,29 +191,43 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="L7v-C1-v51"/>
+                                <exclude reference="UUN-Ne-R1M"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="dMF-7V-kAc"/>
-                                <exclude reference="DGQ-wg-qUm"/>
-                                <exclude reference="uz4-fe-tWO"/>
+                                <exclude reference="1qd-WS-bLz"/>
+                                <exclude reference="C5k-rR-aAO"/>
+                                <exclude reference="Gfk-An-FHd"/>
+                                <exclude reference="ISY-fP-wL9"/>
+                                <exclude reference="SsM-fc-NBS"/>
                                 <exclude reference="4fn-F9-lQx"/>
                                 <exclude reference="Xba-oJ-omG"/>
                                 <exclude reference="jR1-Rj-wki"/>
                                 <exclude reference="m9u-HL-AmR"/>
+                                <exclude reference="DGQ-wg-qUm"/>
+                                <exclude reference="uz4-fe-tWO"/>
+                                <exclude reference="dMF-7V-kAc"/>
+                                <exclude reference="dPZ-8m-mWQ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="L7v-C1-v51"/>
+                                <include reference="UUN-Ne-R1M"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="dMF-7V-kAc"/>
-                                <include reference="DGQ-wg-qUm"/>
-                                <include reference="uz4-fe-tWO"/>
+                                <include reference="1qd-WS-bLz"/>
+                                <exclude reference="C5k-rR-aAO"/>
+                                <include reference="Gfk-An-FHd"/>
+                                <include reference="ISY-fP-wL9"/>
+                                <include reference="SsM-fc-NBS"/>
                                 <include reference="4fn-F9-lQx"/>
                                 <include reference="Xba-oJ-omG"/>
                                 <include reference="jR1-Rj-wki"/>
                                 <include reference="m9u-HL-AmR"/>
+                                <include reference="DGQ-wg-qUm"/>
+                                <include reference="uz4-fe-tWO"/>
+                                <include reference="dMF-7V-kAc"/>
+                                <include reference="dPZ-8m-mWQ"/>
                             </mask>
                         </variation>
                     </view>
@@ -196,11 +235,12 @@
                         <outlet property="airPressureLabel" destination="K9w-cE-pdb" id="j02-pv-Of9"/>
                         <outlet property="airPressureUnitLabel" destination="QBV-Xm-y7o" id="w8k-nZ-VnT"/>
                         <outlet property="relativeAltitudeLabel" destination="Sct-7B-z0I" id="9yB-3A-4ej"/>
+                        <outlet property="scaleLinesView" destination="UUN-Ne-R1M" id="7r8-0e-vc1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="629.25" y="39.75"/>
+            <point key="canvasLocation" x="628.5" y="39.75"/>
         </scene>
     </scenes>
 </document>

@@ -15,6 +15,7 @@
 		5D7AF81619D0FF7000CD9FFF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D7AF81419D0FF7000CD9FFF /* LaunchScreen.xib */; };
 		5D7AF82219D0FF7000CD9FFF /* BarometerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7AF82119D0FF7000CD9FFF /* BarometerTests.m */; };
 		5D7AF82D19D112F300CD9FFF /* BRBarometerReading.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7AF82C19D112F300CD9FFF /* BRBarometerReading.m */; };
+		5DB1645219D1CF8600B9FEE9 /* BRScaleLines.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1645119D1CF8600B9FEE9 /* BRScaleLines.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		5D7AF82119D0FF7000CD9FFF /* BarometerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarometerTests.m; sourceTree = "<group>"; };
 		5D7AF82B19D112F300CD9FFF /* BRBarometerReading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRBarometerReading.h; sourceTree = "<group>"; };
 		5D7AF82C19D112F300CD9FFF /* BRBarometerReading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRBarometerReading.m; sourceTree = "<group>"; };
+		5DB1645019D1CF8600B9FEE9 /* BRScaleLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRScaleLines.h; sourceTree = "<group>"; };
+		5DB1645119D1CF8600B9FEE9 /* BRScaleLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRScaleLines.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				5D7AF82B19D112F300CD9FFF /* BRBarometerReading.h */,
 				5D7AF82C19D112F300CD9FFF /* BRBarometerReading.m */,
 				5D7AF80F19D0FF7000CD9FFF /* Main.storyboard */,
+				5DB1645019D1CF8600B9FEE9 /* BRScaleLines.h */,
+				5DB1645119D1CF8600B9FEE9 /* BRScaleLines.m */,
 				5D7AF81219D0FF7000CD9FFF /* Images.xcassets */,
 				5D7AF81419D0FF7000CD9FFF /* LaunchScreen.xib */,
 				5D7AF80519D0FF7000CD9FFF /* Supporting Files */,
@@ -226,6 +231,7 @@
 			files = (
 				5D7AF80E19D0FF7000CD9FFF /* ViewController.m in Sources */,
 				5D7AF80B19D0FF7000CD9FFF /* AppDelegate.m in Sources */,
+				5DB1645219D1CF8600B9FEE9 /* BRScaleLines.m in Sources */,
 				5D7AF82D19D112F300CD9FFF /* BRBarometerReading.m in Sources */,
 				5D7AF80819D0FF7000CD9FFF /* main.m in Sources */,
 			);
@@ -418,6 +424,7 @@
 				5D7AF82719D0FF7000CD9FFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D7AF82819D0FF7000CD9FFF /* Build configuration list for PBXNativeTarget "BarometerTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +433,7 @@
 				5D7AF82A19D0FF7000CD9FFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

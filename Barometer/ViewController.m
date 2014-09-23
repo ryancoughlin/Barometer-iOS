@@ -8,6 +8,7 @@
 
 @import CoreMotion;
 
+#import "BRScaleLines.h"
 #import "BRBarometerReading.h"
 #import "ViewController.h"
 
@@ -21,7 +22,8 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 
     _lengthFormatter = [[NSLengthFormatter alloc] init];
@@ -33,33 +35,33 @@
     if ([CMAltimeter isRelativeAltitudeAvailable]) {
         self.altitude = [[CMAltimeter alloc] init];
         [self.altitude startRelativeAltitudeUpdatesToQueue:[NSOperationQueue mainQueue]
-                                               withHandler:^(CMAltitudeData *altitudeData, NSError *error) {
-
+                                               withHandler:^(CMAltitudeData *altitudeData, NSError *error)
+        {
             if (error) {
                 NSLog(@"Error: %@", error);
             }
-            
-            NSString *localizedHeightUnitDescriptionFormat = NSLocalizedString(@"%@ %@", nil);
-            NSString *heightFeet = [_lengthFormatter stringFromMeters:[altitudeData.relativeAltitude doubleValue]];
+
             NSString *heightUnitString = [_lengthFormatter unitStringFromValue:[altitudeData.relativeAltitude doubleValue] unit:heightFormatterUnit];
-            
+
             BRBarometerReading *currentReading = [[BRBarometerReading alloc] initWithPressure:[NSNumber numberWithDouble:[altitudeData.pressure doubleValue]] currentDate:[NSDate date]];
             BRBarometerReading *lastReading = [_barometerReadings lastObject];
 
-            NSLog(@"last: %@", lastReading.pressure);
-            NSLog(@"currentReading: %@", currentReading.pressure);
-        
-            if (!lastReading.pressure == nil) {
-                if (![currentReading.pressure isEqualToNumber:lastReading.pressure])
-                {
+            NSString *currentPressure = [self formatNumberToTwoDecimalPlacesWithNumber:currentReading.pressure];
+            NSString *lastPressure = [self formatNumberToTwoDecimalPlacesWithNumber:lastReading.pressure];
+
+            if (lastPressure == nil) {
+                [_barometerReadings addObject:currentReading];
+            } else {
+                if (![lastPressure isEqualToString:currentPressure]) {
                     [_barometerReadings addObject:currentReading];
-                
-                    NSLog(@"last: %@", lastReading.pressure);
-                    NSLog(@"currentReading: %@", currentReading.pressure);
                 }
             }
             
-            self.relativeAltitudeLabel.text  = heightFeet;
+            [UIView animateWithDuration:1 animations:^{
+                [self.scaleLinesView setCurrent:[currentReading.pressure floatValue]];
+            }];
+
+            self.relativeAltitudeLabel.text  = heightUnitString;
             self.airPressureLabel.text = [self formatNumberToTwoDecimalPlacesWithNumber:currentReading.pressure];
 
         }];
