@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *airPressureUnitLabel;
 @property (weak, nonatomic) IBOutlet UILabel *relativeAltitudeLabel;
 @property (weak, nonatomic) IBOutlet BRScaleLines *scaleLinesView;
+@property (weak, nonatomic) IBOutlet UILabel *pressureSourceLabel;
 
 @end
 

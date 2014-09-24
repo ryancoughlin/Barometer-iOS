@@ -1,0 +1,9 @@
+//
+//  Config.xcconfig
+//  Barometer
+//
+//  Created by Fabian Canas on 9/23/14.
+//  Copyright (c) 2014 Fabian Canas. All rights reserved.
+//
+#include "Keys.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) FORECAST_IO_KEY=@\"$(FORECAST_IO_KEY)\"
