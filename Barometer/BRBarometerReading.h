@@ -16,4 +16,7 @@
 
 - (instancetype)initWithPressure:(double)airPressureNumber currentDate:(NSDate *)date;
 
+- (double)pressureInMMHg;
+- (double)pressureInKPa;
+
 @end

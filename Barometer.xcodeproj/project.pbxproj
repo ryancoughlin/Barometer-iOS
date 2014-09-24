@@ -49,6 +49,8 @@
 		5D7AF82C19D112F300CD9FFF /* BRBarometerReading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRBarometerReading.m; sourceTree = "<group>"; };
 		5DB1645019D1CF8600B9FEE9 /* BRScaleLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRScaleLines.h; sourceTree = "<group>"; };
 		5DB1645119D1CF8600B9FEE9 /* BRScaleLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRScaleLines.m; sourceTree = "<group>"; };
+		E73C529219D267AF00E66F44 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		E73C529319D2688200E66F44 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E780111E19D24C5B006FFD94 /* PressureHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PressureHistory.h; sourceTree = "<group>"; };
 		E780111F19D24C5B006FFD94 /* PressureHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PressureHistory.m; sourceTree = "<group>"; };
 		F8250AC02C6A4EB5B1B638E0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,8 @@
 		5D7AF7F919D0FF7000CD9FFF = {
 			isa = PBXGroup;
 			children = (
+				E73C529219D267AF00E66F44 /* Config.xcconfig */,
+				E73C529319D2688200E66F44 /* README.md */,
 				5D7AF80419D0FF7000CD9FFF /* Barometer */,
 				5D7AF81E19D0FF7000CD9FFF /* BarometerTests */,
 				5D7AF80319D0FF7000CD9FFF /* Products */,
@@ -332,6 +336,7 @@
 /* Begin XCBuildConfiguration section */
 		5D7AF82319D0FF7000CD9FFF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E73C529219D267AF00E66F44 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -373,6 +378,7 @@
 		};
 		5D7AF82419D0FF7000CD9FFF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E73C529219D267AF00E66F44 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
