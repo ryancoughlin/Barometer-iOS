@@ -19,6 +19,7 @@
 
 @property CMAltimeter *altitude;
 @property NSLengthFormatter *lengthFormatter;
+@property (nonatomic, strong) CMAltimeter *altimeter;
 @property (nonatomic, strong) BRBarometerReading *currentReading;
 @property (nonatomic, strong) PressureHistory *pressureHistory;
 @property (nonatomic, strong) CMAltitudeData *altitudeData;
@@ -52,17 +53,17 @@
 {
     self.updateTimer = [NSTimer timerWithTimeInterval:0.4
                                                target:self
-                                             selector:@selector(updateUIOnTimer:)
+                                             selector:@selector(updateUI:)
                                              userInfo:nil
                                               repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:self.updateTimer forMode:NSRunLoopCommonModes];
-    CMAltimeter *altimeter = [[CMAltimeter alloc] init];
-    [altimeter startRelativeAltitudeUpdatesToQueue:[NSOperationQueue new]
-                                       withHandler:^(CMAltitudeData *altitudeData, NSError *error) {
-                                           BRBarometerReading *currentReading = [[BRBarometerReading alloc] initWithPressure:[altitudeData.pressure doubleValue]
-                                                                                                                 currentDate:[NSDate date]];
-                                           self.currentReading = currentReading;
-                                       }];
+    self.altimeter = [[CMAltimeter alloc] init];
+    [self.altimeter startRelativeAltitudeUpdatesToQueue:[NSOperationQueue new]
+                                            withHandler:^(CMAltitudeData *altitudeData, NSError *error) {
+                                                BRBarometerReading *currentReading = [[BRBarometerReading alloc] initWithPressure:[altitudeData.pressure doubleValue]
+                                                                                                                      currentDate:[NSDate date]];
+                                                self.currentReading = currentReading;
+                                            }];
 }
 
 // Must be called on main thread
@@ -83,7 +84,7 @@
     [formatTwoDecimalPlaces setNumberStyle:NSNumberFormatterDecimalStyle];
     [formatTwoDecimalPlaces setMaximumFractionDigits:2];
     [formatTwoDecimalPlaces setRoundingMode: NSNumberFormatterRoundUp];
-
+    
     return [formatTwoDecimalPlaces stringFromNumber:number];
 }
 
