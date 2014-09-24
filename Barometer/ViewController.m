@@ -11,13 +11,13 @@
 #import "BRScaleLines.h"
 #import "BRBarometerReading.h"
 #import "ViewController.h"
+#import "PressureHistory.h"
 
 @interface ViewController ()
 
 @property CMAltimeter *altitude;
 @property NSLengthFormatter *lengthFormatter;
-@property NSMutableArray *barometerReadings;
-
+@property (nonatomic, strong) PressureHistory *pressureHistory;
 @end
 
 @implementation ViewController
@@ -25,12 +25,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    _lengthFormatter = [[NSLengthFormatter alloc] init];
-    NSLengthFormatterUnit heightFormatterUnit = NSLengthFormatterUnitFoot;
-    _lengthFormatter.unitStyle = NSFormattingUnitStyleLong;
     
-    _barometerReadings = [[NSMutableArray alloc] init];
+    self.pressureHistory = [PressureHistory new];
     
     if ([CMAltimeter isRelativeAltitudeAvailable]) {
         self.altitude = [[CMAltimeter alloc] init];
@@ -40,30 +36,17 @@
             if (error) {
                 NSLog(@"Error: %@", error);
             }
-
-            NSString *heightUnitString = [_lengthFormatter unitStringFromValue:[altitudeData.relativeAltitude doubleValue] unit:heightFormatterUnit];
-
-            BRBarometerReading *currentReading = [[BRBarometerReading alloc] initWithPressure:[NSNumber numberWithDouble:[altitudeData.pressure doubleValue]] currentDate:[NSDate date]];
-            BRBarometerReading *lastReading = [_barometerReadings lastObject];
-
-            NSString *currentPressure = [self formatNumberToTwoDecimalPlacesWithNumber:currentReading.pressure];
-            NSString *lastPressure = [self formatNumberToTwoDecimalPlacesWithNumber:lastReading.pressure];
-
-            if (lastPressure == nil) {
-                [_barometerReadings addObject:currentReading];
-            } else {
-                if (![lastPressure isEqualToString:currentPressure]) {
-                    [_barometerReadings addObject:currentReading];
-                }
-            }
+            
+            BRBarometerReading *currentReading = [[BRBarometerReading alloc] initWithPressure:[altitudeData.pressure doubleValue]
+                                                                                  currentDate:[NSDate date]];
+            
+            [self.pressureHistory addReading:currentReading];
             
             [UIView animateWithDuration:1 animations:^{
-                [self.scaleLinesView setCurrent:[currentReading.pressure floatValue]];
+                [self.scaleLinesView setCurrent:currentReading.pressure];
             }];
 
-            self.relativeAltitudeLabel.text  = heightUnitString;
-            self.airPressureLabel.text = [self formatNumberToTwoDecimalPlacesWithNumber:currentReading.pressure];
-
+            self.airPressureLabel.text = [self formatNumberToTwoDecimalPlacesWithNumber:@(currentReading.pressure)];
         }];
     } else {
         NSLog(@"Hardware not supported.");
@@ -79,6 +62,5 @@
 
     return [formatTwoDecimalPlaces stringFromNumber:number];
 }
-
 
 @end

@@ -12,7 +12,7 @@ static const double kpaToInHG = 0.296133971008484;
 
 @implementation BRBarometerReading
 
-- (instancetype)initWithPressure:(NSNumber *)airPressureNumber currentDate:(NSDate *)date
+- (instancetype)initWithPressure:(double)airPressureNumber currentDate:(NSDate *)date
 {
     self = [super init];
 
@@ -21,14 +21,19 @@ static const double kpaToInHG = 0.296133971008484;
     }
     
     _date = date;
-    _pressure = [self convertKPAToInHGWithNumber:airPressureNumber];
+    _pressure = airPressureNumber;
     
     return self;
 }
 
-- (NSNumber *)convertKPAToInHGWithNumber:(NSNumber *)numberPressure
+- (double)pressureInMMHg
 {
-    return [NSNumber numberWithDouble:([numberPressure doubleValue] * kpaToInHG)];
+    return self.pressure * kpaToInHG;
+}
+
+- (double)pressureInKPa
+{
+    return self.pressure;
 }
 
 @end

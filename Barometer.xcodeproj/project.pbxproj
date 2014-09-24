@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0093037924FC4F56A446ED12 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8250AC02C6A4EB5B1B638E0 /* libPods.a */; };
 		5D7AF80819D0FF7000CD9FFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7AF80719D0FF7000CD9FFF /* main.m */; };
 		5D7AF80B19D0FF7000CD9FFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7AF80A19D0FF7000CD9FFF /* AppDelegate.m */; };
 		5D7AF80E19D0FF7000CD9FFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7AF80D19D0FF7000CD9FFF /* ViewController.m */; };
@@ -16,6 +17,7 @@
 		5D7AF82219D0FF7000CD9FFF /* BarometerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7AF82119D0FF7000CD9FFF /* BarometerTests.m */; };
 		5D7AF82D19D112F300CD9FFF /* BRBarometerReading.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7AF82C19D112F300CD9FFF /* BRBarometerReading.m */; };
 		5DB1645219D1CF8600B9FEE9 /* BRScaleLines.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1645119D1CF8600B9FEE9 /* BRScaleLines.m */; };
+		E780112019D24C5B006FFD94 /* PressureHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = E780111F19D24C5B006FFD94 /* PressureHistory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		49BFF50E951C4B329FE8FEB6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		5D7AF80219D0FF7000CD9FFF /* Barometer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Barometer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D7AF80619D0FF7000CD9FFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D7AF80719D0FF7000CD9FFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -46,6 +49,9 @@
 		5D7AF82C19D112F300CD9FFF /* BRBarometerReading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRBarometerReading.m; sourceTree = "<group>"; };
 		5DB1645019D1CF8600B9FEE9 /* BRScaleLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRScaleLines.h; sourceTree = "<group>"; };
 		5DB1645119D1CF8600B9FEE9 /* BRScaleLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRScaleLines.m; sourceTree = "<group>"; };
+		E780111E19D24C5B006FFD94 /* PressureHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PressureHistory.h; sourceTree = "<group>"; };
+		E780111F19D24C5B006FFD94 /* PressureHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PressureHistory.m; sourceTree = "<group>"; };
+		F8250AC02C6A4EB5B1B638E0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0093037924FC4F56A446ED12 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +79,8 @@
 				5D7AF80419D0FF7000CD9FFF /* Barometer */,
 				5D7AF81E19D0FF7000CD9FFF /* BarometerTests */,
 				5D7AF80319D0FF7000CD9FFF /* Products */,
+				49BFF50E951C4B329FE8FEB6 /* Pods.xcconfig */,
+				B9A7AB7E1D5940B28DA2A44E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +108,8 @@
 				5D7AF81219D0FF7000CD9FFF /* Images.xcassets */,
 				5D7AF81419D0FF7000CD9FFF /* LaunchScreen.xib */,
 				5D7AF80519D0FF7000CD9FFF /* Supporting Files */,
+				E780111E19D24C5B006FFD94 /* PressureHistory.h */,
+				E780111F19D24C5B006FFD94 /* PressureHistory.m */,
 			);
 			path = Barometer;
 			sourceTree = "<group>";
@@ -129,6 +140,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B9A7AB7E1D5940B28DA2A44E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8250AC02C6A4EB5B1B638E0 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D7AF82519D0FF7000CD9FFF /* Build configuration list for PBXNativeTarget "Barometer" */;
 			buildPhases = (
+				FAF4BE02004C42ABAF758E69 /* Check Pods Manifest.lock */,
 				5D7AF7FE19D0FF7000CD9FFF /* Sources */,
 				5D7AF7FF19D0FF7000CD9FFF /* Frameworks */,
 				5D7AF80019D0FF7000CD9FFF /* Resources */,
+				EBD6FFACB0F946438340F12A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -224,6 +245,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EBD6FFACB0F946438340F12A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAF4BE02004C42ABAF758E69 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5D7AF7FE19D0FF7000CD9FFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -234,6 +288,7 @@
 				5DB1645219D1CF8600B9FEE9 /* BRScaleLines.m in Sources */,
 				5D7AF82D19D112F300CD9FFF /* BRBarometerReading.m in Sources */,
 				5D7AF80819D0FF7000CD9FFF /* main.m in Sources */,
+				E780112019D24C5B006FFD94 /* PressureHistory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +408,7 @@
 		};
 		5D7AF82619D0FF7000CD9FFF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49BFF50E951C4B329FE8FEB6 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Barometer/Info.plist;
@@ -363,6 +419,7 @@
 		};
 		5D7AF82719D0FF7000CD9FFF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49BFF50E951C4B329FE8FEB6 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Barometer/Info.plist;

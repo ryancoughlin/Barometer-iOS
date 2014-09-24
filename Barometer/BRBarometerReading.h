@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Realm/Realm.h>
 
-@interface BRBarometerReading : NSObject
+@interface BRBarometerReading : RLMObject
 
 @property (nonatomic, strong) NSDate *date;
-@property (nonatomic, strong) NSNumber *pressure;
+@property (nonatomic) double pressure;
 
-- (instancetype)initWithPressure:(NSNumber *)airPressureNumber currentDate:(NSDate *)date;
+- (instancetype)initWithPressure:(double)airPressureNumber currentDate:(NSDate *)date;
 
 @end
