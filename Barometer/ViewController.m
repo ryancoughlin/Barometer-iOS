@@ -74,9 +74,17 @@
 {
     [self.pressureHistory addReading:self.currentReading];
     
-    [UIView animateWithDuration:1 animations:^{
-        [self.scaleLinesView setCurrent:[self.currentReading pressureInMMHg]];
-    }];
+    [UIView animateWithDuration:1
+                          delay:0
+         usingSpringWithDamping:0.75
+          initialSpringVelocity:0
+                        options:kNilOptions
+                     animations:^{
+                         [self.scaleLinesView setCurrent:[self.currentReading pressureInMMHg]];
+                         [self.scaleLinesView setMinimum:[[self.pressureHistory low] pressureInMMHg]];
+                         [self.scaleLinesView setMaximum:[[self.pressureHistory high] pressureInMMHg]];
+                     }
+                     completion:nil];
     
     self.airPressureLabel.text = [self formatNumberToTwoDecimalPlacesWithNumber:@([self.currentReading pressureInMMHg])];
 }
