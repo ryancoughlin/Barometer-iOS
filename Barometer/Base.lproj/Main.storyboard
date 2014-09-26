@@ -20,11 +20,11 @@
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mfV-NM-Rdk">
                                 <rect key="frame" x="150" y="150" width="300" height="300"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="—" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQ9-kU-KYP">
-                                        <rect key="frame" x="-33" y="71" width="363" height="93"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="—" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQ9-kU-KYP">
+                                        <rect key="frame" x="-33" y="71" width="363" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="363" id="AXM-rh-O28"/>
-                                            <constraint firstAttribute="height" constant="80" id="wa4-76-hdN"/>
+                                            <constraint firstAttribute="height" constant="100" id="wa4-76-hdN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="81"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,7 +78,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUN-Ne-R1M" customClass="BRScaleLines">
-                                <rect key="frame" x="0.0" y="40" width="37" height="560"/>
+                                <rect key="frame" x="0.0" y="40" width="37" height="540"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="37" id="dLG-Hx-IU8"/>
@@ -92,7 +92,7 @@
                         <constraints>
                             <constraint firstItem="jyV-Pf-zRb" firstAttribute="top" secondItem="UUN-Ne-R1M" secondAttribute="top" constant="-20" id="Gma-sg-n1Y"/>
                             <constraint firstAttribute="centerX" secondItem="mfV-NM-Rdk" secondAttribute="centerX" id="LjL-DO-MXK"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="bottom" secondItem="UUN-Ne-R1M" secondAttribute="bottom" id="UOT-kW-HRg"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="bottom" secondItem="UUN-Ne-R1M" secondAttribute="bottom" constant="20" id="UOT-kW-HRg"/>
                             <constraint firstItem="UUN-Ne-R1M" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="rVo-1r-aiF"/>
                             <constraint firstAttribute="centerY" secondItem="mfV-NM-Rdk" secondAttribute="centerY" id="xVU-yk-Ns9"/>
                         </constraints>
