@@ -11,6 +11,10 @@
 
 @interface BRScaleLines ()
 
+@property (nonatomic, assign) CGFloat minimum;
+@property (nonatomic, assign) CGFloat maximum;
+@property (nonatomic, assign) CGFloat current;
+
 @property (nonatomic) float minimumRange;
 @property (nonatomic) float maximumRange;
 @property (nonatomic) float granularity;
@@ -28,7 +32,7 @@
     return self.bounds.size.height;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
 
@@ -59,22 +63,34 @@
 
 - (CGFloat)yPositionForValue:(double)value
 {
-    return (value - self.minimumRange) * ([self height]/(self.maximumRange - self.minimumRange));
+    return [self height] - (value - self.minimumRange) * ([self height]/(self.maximumRange - self.minimumRange));
 }
 
-- (void)setMinimum:(float)minimum
+- (void)setMinimum:(CGFloat)minimum
 {
+    _minimum = minimum;
     self.minMarker.center = CGPointMake(20, [self yPositionForValue:minimum]);
 }
 
-- (void)setMaximum:(float)minimum
+- (void)setMaximum:(CGFloat)maximum
 {
-    self.maxMarker.center = CGPointMake(20, [self yPositionForValue:minimum]);
+    _maximum = maximum;
+    self.maxMarker.center = CGPointMake(20, [self yPositionForValue:maximum]);
 }
 
-- (void)setCurrent:(float)minimum
+- (void)setCurrent:(CGFloat)current
 {
-    self.currentMarker.center = CGPointMake(20, [self yPositionForValue:minimum]);
+    _current = current;
+    self.currentMarker.center = CGPointMake(20, [self yPositionForValue:current]);
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    // Reset marker positions by "resetting" values;
+    [self setMaximum:_maximum];
+    [self setMinimum:_minimum];
+    [self setCurrent:_current];
 }
 
 - (void)drawRect:(CGRect)rect
@@ -83,24 +99,19 @@
     CGContextSetLineWidth(context, 1);
     CGContextSetStrokeColorWithColor(context, [UIColor grayColor].CGColor);
 
-    int linesNum = (self.maximumRange - self.minimumRange)/self.granularity;
-    int spacing = self.height/linesNum;
-
-
-    for (int i = spacing; i <= spacing*linesNum; i += spacing) {
-
-        CGContextBeginPath(context);
-
-        if ( i % 10 == 0 ) {
-            CGContextMoveToPoint(context, 0, i);
-            CGContextAddLineToPoint(context, 18, i);
-        } else {
-            CGContextMoveToPoint(context, 0, i);
-            CGContextAddLineToPoint(context, 6, i);
-        }
-
-        CGContextStrokePath(context);
+    NSInteger numberOfLines = (self.maximumRange - self.minimumRange)/self.granularity;
+    CGFloat spacing = self.height/numberOfLines;
+    
+    CGContextBeginPath(context);
+    
+    for (NSInteger line = 0; line <= numberOfLines; line++) {
+        NSInteger dashLength = ( line % 10 == 0 ) ? 18. : 6.;
+        CGFloat linePosition = line * spacing;
+        
+        CGContextMoveToPoint(context, 0, linePosition);
+        CGContextAddLineToPoint(context, dashLength,linePosition);
     }
+    CGContextStrokePath(context);
 }
 
 @end

@@ -10,11 +10,11 @@
 
 @interface BRScaleLines : UIView
 
-- (void)setMinimum:(float)minimum;
+- (void)setMinimum:(CGFloat)minimum;
 
-- (void)setMaximum:(float)minimum;
+- (void)setMaximum:(CGFloat)minimum;
 
-- (void)setCurrent:(float)minimum;
+- (void)setCurrent:(CGFloat)minimum;
 
 
 @end

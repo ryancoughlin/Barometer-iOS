@@ -17,6 +17,8 @@
 		5D7AF82219D0FF7000CD9FFF /* BarometerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7AF82119D0FF7000CD9FFF /* BarometerTests.m */; };
 		5D7AF82D19D112F300CD9FFF /* BRBarometerReading.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D7AF82C19D112F300CD9FFF /* BRBarometerReading.m */; };
 		5DB1645219D1CF8600B9FEE9 /* BRScaleLines.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB1645119D1CF8600B9FEE9 /* BRScaleLines.m */; };
+		E729DF6C19D4E5420027F616 /* ForecastService.m in Sources */ = {isa = PBXBuildFile; fileRef = E729DF6B19D4E5420027F616 /* ForecastService.m */; };
+		E729DF6E19D4EB3C0027F616 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E729DF6D19D4EB3C0027F616 /* CoreLocation.framework */; };
 		E780112019D24C5B006FFD94 /* PressureHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = E780111F19D24C5B006FFD94 /* PressureHistory.m */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,19 @@
 			remoteInfo = Barometer;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E729DF6919D4E3ED0027F616 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		49BFF50E951C4B329FE8FEB6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -49,6 +64,10 @@
 		5D7AF82C19D112F300CD9FFF /* BRBarometerReading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRBarometerReading.m; sourceTree = "<group>"; };
 		5DB1645019D1CF8600B9FEE9 /* BRScaleLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRScaleLines.h; sourceTree = "<group>"; };
 		5DB1645119D1CF8600B9FEE9 /* BRScaleLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRScaleLines.m; sourceTree = "<group>"; };
+		E729DF5719D4E3ED0027F616 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		E729DF6A19D4E5420027F616 /* ForecastService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForecastService.h; sourceTree = "<group>"; };
+		E729DF6B19D4E5420027F616 /* ForecastService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForecastService.m; sourceTree = "<group>"; };
+		E729DF6D19D4EB3C0027F616 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E73C529219D267AF00E66F44 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		E73C529319D2688200E66F44 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E780111E19D24C5B006FFD94 /* PressureHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PressureHistory.h; sourceTree = "<group>"; };
@@ -61,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E729DF6E19D4EB3C0027F616 /* CoreLocation.framework in Frameworks */,
 				0093037924FC4F56A446ED12 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +134,8 @@
 				5D7AF80519D0FF7000CD9FFF /* Supporting Files */,
 				E780111E19D24C5B006FFD94 /* PressureHistory.h */,
 				E780111F19D24C5B006FFD94 /* PressureHistory.m */,
+				E729DF6A19D4E5420027F616 /* ForecastService.h */,
+				E729DF6B19D4E5420027F616 /* ForecastService.m */,
 			);
 			path = Barometer;
 			sourceTree = "<group>";
@@ -147,7 +169,9 @@
 		B9A7AB7E1D5940B28DA2A44E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E729DF6D19D4EB3C0027F616 /* CoreLocation.framework */,
 				F8250AC02C6A4EB5B1B638E0 /* libPods.a */,
+				E729DF5719D4E3ED0027F616 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -164,6 +188,7 @@
 				5D7AF7FF19D0FF7000CD9FFF /* Frameworks */,
 				5D7AF80019D0FF7000CD9FFF /* Resources */,
 				EBD6FFACB0F946438340F12A /* Copy Pods Resources */,
+				E729DF6919D4E3ED0027F616 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -289,6 +314,7 @@
 			files = (
 				5D7AF80E19D0FF7000CD9FFF /* ViewController.m in Sources */,
 				5D7AF80B19D0FF7000CD9FFF /* AppDelegate.m in Sources */,
+				E729DF6C19D4E5420027F616 /* ForecastService.m in Sources */,
 				5DB1645219D1CF8600B9FEE9 /* BRScaleLines.m in Sources */,
 				5D7AF82D19D112F300CD9FFF /* BRBarometerReading.m in Sources */,
 				5D7AF80819D0FF7000CD9FFF /* main.m in Sources */,
